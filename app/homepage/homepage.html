@@ -1,10 +1,28 @@
 <div ng-controller="HomePageCtrl">
-	<form name="homeForm" ng-submit="directPage('result', homeForm.$valid)" novalidate>
-		<div class="row">
+
+<style>
+.mblack {
+    opacity:0.9;
+    height: 500px;
+}
+
+.op {
+	opacity: 1;
+}
+
+</style>
+
+	<form name="homeForm" ng-submit="directPage('result', homeForm.$valid)" novalidate>  
+	<div class="modal-dialog">
+    <div class="modal-content mblack">
+
+     
+		<div class="row op">
 			<div class="col-md-4">
 			</div>
 			<div class="col-md-4">
 				<div class="form-group">
+				<div class="col-xs-12" style="height:120px;"></div>
 					<center>
 					<h1 for="search">Meet Meat</h1>
 					</center>
@@ -13,28 +31,43 @@
 			<div class="col-md-4">
 			</div>	
 		</div>
-		<div class="row">
-			<div class="col-md-4">
-			</div>
-			<div class="col-md-4">
-				<div class="col-md-8 form-group" ng-class="{'has-error': (submitted && homeForm.search.$invalid)}">
+
+
+		<div class="row op">
+		<div class="col-xs-12" style="height:30px;"></div>
+			
+			<div class="col-md-1"></div>
+
+			<div class="col-md-10">
+
+				<div class="col-md-7 form-group" ng-class="{'has-error': (submitted && homeForm.search.$invalid)}">
 					<input type="text" class="form-control" name="search" id="search" ng-model="search" placeholder="meat :)" required>
 					<div ng-show="submitted && homeForm.search.$invalid">	<span class="help-block">Must enter a search parameter.</span>
 					</div>
 				</div>
+
 				<div class="col-md-4 form-group" ng-class="{'has-error': (submitted && homeForm.location.$invalid)}">
 					<input type="text" class="form-control" name="location" id="location" ng-model="location" placeholder="Location" required>
-					<div ng-show="submitted && homeForm.location.$invalid">	<span class="help-block">Must enter a location parameter.</span>
+					<div ng-show="submitted && homeForm.location.$invalid">	<span class="help-block">Must enter a location parameter	.</span>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="col-md-6">
+			
+					<!-- <button type="submit" class="btn btn-primary glyphicon glyphicon-map-marker"></button> -->
+				
+				</div>
+
+			<div class="col-md-1"></div>	
+		</div>
+
+		<div class="row op">
+			<center>
 					<button type="submit" class="btn btn-primary">Find</button>
 					<button type="submit" class="btn btn-primary">Feeling Lucky</button>
-				</div>
+
+
+			</center>
 			</div>
-			<div class="col-md-1"></div>
-		</div>
+    </div>
+  </div>
 	</form>
 </div>

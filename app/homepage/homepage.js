@@ -1,5 +1,6 @@
 'use strict';
-
+var h = screen.height;
+var w = screen.width;
 angular.module('meetmeat.homepage', ['ngRoute','ui.bootstrap'])
 
 .config(['$routeProvider', function($routeProvider) {

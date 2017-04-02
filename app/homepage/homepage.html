@@ -1,5 +1,5 @@
-<!-- <html ng-app="meetmeat.homepage">  -->
-	<div ng-controller="HomePageCtrl">
+<div ng-controller="HomePageCtrl">
+	<form name="myForm" novalidate>
 		<div class="row">
 			<div class="col-md-4">
 			</div>
@@ -17,19 +17,19 @@
 			<div class="col-md-4">
 			</div>
 			<div class="col-md-4">
-				<div class="col-md-8 form-group">
-					<input type="text" class="form-control" id="search" ng-model="searchInput" placeholder="meat :)">
+				<div class="col-md-8 form-group" ng-class="{'has-error': (submitted && myForm.search.$invalid)}">
+					<input type="text" class="form-control" name="search" id="search" ng-model="search" placeholder="meat :)" required>
+					<span ng-show="submitted && myForm.search.$invalid">Must enter a search parameter.</span>
 				</div>
 				<div class="col-md-4 form-group">
-					<input type="text" class="form-control" id="location" ng-model="location" placeholder="Location">
+					<input type="text" class="form-control" name="location" id="location" ng-model="location" placeholder="Location" required>
+					<span ng-show="submitted && myForm.location.$invalid">Must enter a location parameter.</span>
 				</div>
 			</div>
 			<div class="col-md-4">
-				<button class="btn btn-primary">Find</button>
+				<button class="btn btn-primary" ng-click="directPage('result')">Find</button>
 				<button class="btn btn-primary">Feeling Lucky</button>
 			</div>
 		</div>
-
-		{{searchInput}}
-	</div>
-<!-- </html> -->
+	</form>
+</div>

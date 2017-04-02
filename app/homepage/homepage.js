@@ -9,11 +9,19 @@ angular.module('meetmeat.homepage', ['ngRoute','ui.bootstrap'])
   });
 }])
 
-.controller('HomePageCtrl', function($scope) {
-	$scope.searchInput = "";
+.controller('HomePageCtrl', function($scope, $location) {
+	$scope.search = "";
+	$scope.location = "";
+	$scope.submitted = false;
+	var valid = false;
 
-	$scope.enterFunction = function() {
-
+	$scope.directPage = function(path) {
+		$scope.submitted = true;
+		if (valid) {
+			sessionStorage.setItem('search', $scope.search);
+			sessionStorage.setItem('location', $scope.location);
+			$location.path(path);
+		}
 	};
 
 });

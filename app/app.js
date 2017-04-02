@@ -5,7 +5,7 @@ angular.module('meetmeat', [
   'ui.bootstrap',
   'ngRoute',
   'meetmeat.homepage',
-  'meetmeat.view2',
+  'meetmeat.result',
   'meetmeat.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

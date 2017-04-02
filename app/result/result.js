@@ -4,6 +4,7 @@ angular.module('meetmeat')
 .controller('ResultCtrl', function($scope, $http) {
 
 	$scope.search = "";
+	$scope.locationSearched ="";
 	$scope.location = {};
 
 	$scope.API_KEY="AIzaSyBQxYucC78U57x9h-jvUW7tBIMNvBma2Ho";
@@ -14,9 +15,9 @@ angular.module('meetmeat')
 
 	$scope.init = function(){
 		$scope.search = sessionStorage.search;
+		$scope.locationSearched = sessionStorage.locationSearched;
 		$scope.location = JSON.parse(sessionStorage.location);
 		// $scope.restaurantList = $scope.findPlacesUrl+"json?location="+$scope.location.latitude+","+$scope.location.longitude+"&radius="+$scope.radius+"&type=restaurant&key="+$scope.API_KEY;
-		
 		var url = $scope.findPlacesUrl+"json?location="+$scope.location.latitude+","+$scope.location.longitude+"&radius="+$scope.radius+"&type=restaurant&key="+$scope.API_KEY;
 		
 		//var xhr = createCORSRequest('GET', url);
@@ -60,8 +61,31 @@ angular.module('meetmeat')
 //service.nearbySearch(request, callback);
 };
 
-$scope.restaurantsRecieved = function(restaurants){
-	$scope.restaurantList = restaurants.results;
+$scope.restaurantsRecieved = function(){
+	var url = "https://api.yelp.com/v2/search/?term="+$scope.search+"&location="+$scope.locationSearched;
+	console.log(url);
+
+// var Yelp = require('yelp');
+
+// var yelp = new Yelp({
+//   consumer_key: 'ERYG6VdcBSieMlOXYblNpg',
+//   consumer_secret: 'yuYc32HPxYL4kaH3oFGeoiOOEI8',
+//   token: 'seGTr5rD6dKCh_-iO0NVp36EDqI3yl4X',
+//   token_secret: '4OyKLf-nhHpdQP6IUeAvDv0G_z8',
+// });
+
+// // See http://www.yelp.com/developers/documentation/v2/search_api
+// yelp.search({ term: $scope.search, location: $scope.locationSearched })
+// .then(function (data) {
+//   console.log(data);
+// })
+// .catch(function (err) {
+//   console.error(err);
+// });
+	// $http.get(url)
+ //    	.then(function(response) {
+ //        	console.log(response.data);
+ //   		});
 }
 
 
@@ -125,14 +149,14 @@ var map;
 var infowindow;
 
 function initMap() {
-	console.log(parseFloat($scope.location.latitude));
-	console.log(parseFloat($scope.location.longitude));
+	console.log(parseFloat($scope.location.lat));
+	console.log(parseFloat($scope.location.lng));
       // var pyrmont = {lat: 40.3439888, lng: -74.6514481};
 //var pyrmont = {lat: -33.867, lng: 151.195};
 
 // var pyrmont = {lat: 43.557777, lng: -79.729940};
 
-var pyrmont = {lat: parseFloat($scope.location.latitude), lng: parseFloat($scope.location.longitude)};
+var pyrmont = $scope.location;//{lat: parseFloat($scope.location.latitude), lng: parseFloat($scope.location.longitude)};
 
 map = new google.maps.Map(document.getElementById('map'), {
 	center: pyrmont,
@@ -157,6 +181,7 @@ function callback(results, status) {
         }
     }
     console.log($scope.restaurantList);
+   // $scope.restaurantsRecieved();
 
 }
 

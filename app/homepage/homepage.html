@@ -1,5 +1,5 @@
 <div>
-
+<div id="map"></div>
 	<style>
 		.mblack {
 			opacity:0.9;
@@ -47,7 +47,7 @@
 						</div>
 
 						<div class="col-md-4 form-group" ng-class="{'has-error': (submitted && homeForm.location.$invalid)}">
-							<input type="text" class="form-control" name="location" id="location" ng-model="location" placeholder="Location" required>
+							<input type="text" class="form-control" name="location" id="location" ng-model="locationSearched" placeholder="Location" required>
 							<div ng-show="submitted && homeForm.location.$invalid">	<span class="help-block">Must enter a location parameter	.</span>
 							</div>
 						</div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meetmeat.homepage', ['ngRoute'])
+angular.module('meetmeat.homepage', ['ngRoute','ui.bootstrap'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/homepage', {
@@ -9,6 +9,11 @@ angular.module('meetmeat.homepage', ['ngRoute'])
   });
 }])
 
-.controller('HomePageCtrl', [function() {
+.controller('HomePageCtrl', function($scope) {
+	$scope.searchInput = "";
 
-}]);
+	$scope.enterFunction = function() {
+
+	};
+
+});

@@ -1,6 +1,35 @@
-<div>
-	<div class="form-group">
-		<label for="search">Meat:</label>
-		<input type="text" class="form-control" id="search">
+<!-- <html ng-app="meetmeat.homepage">  -->
+	<div ng-controller="HomePageCtrl">
+		<div class="row">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<center>
+					<h1 for="search">Meet Meat</h1>
+					</center>
+				</div>
+			</div>
+			<div class="col-md-4">
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4">
+				<div class="col-md-8 form-group">
+					<input type="text" class="form-control" id="search" ng-model="searchInput" placeholder="meat :)">
+				</div>
+				<div class="col-md-4 form-group">
+					<input type="text" class="form-control" id="location" ng-model="location" placeholder="Location">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-primary">Find</button>
+				<button class="btn btn-primary">Feeling Lucky</button>
+			</div>
+		</div>
+
+		{{searchInput}}
 	</div>
-</div>
+<!-- </html> -->

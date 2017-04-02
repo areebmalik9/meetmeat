@@ -1,5 +1,5 @@
 <div ng-controller="HomePageCtrl">
-	<form name="myForm" novalidate>
+	<form name="homeForm" ng-submit="directPage('result', homeForm.$valid)" novalidate>
 		<div class="row">
 			<div class="col-md-4">
 			</div>
@@ -17,19 +17,24 @@
 			<div class="col-md-4">
 			</div>
 			<div class="col-md-4">
-				<div class="col-md-8 form-group" ng-class="{'has-error': (submitted && myForm.search.$invalid)}">
+				<div class="col-md-8 form-group" ng-class="{'has-error': (submitted && homeForm.search.$invalid)}">
 					<input type="text" class="form-control" name="search" id="search" ng-model="search" placeholder="meat :)" required>
-					<span ng-show="submitted && myForm.search.$invalid">Must enter a search parameter.</span>
+					<div ng-show="submitted && homeForm.search.$invalid">	<span class="help-block">Must enter a search parameter.</span>
+					</div>
 				</div>
-				<div class="col-md-4 form-group">
+				<div class="col-md-4 form-group" ng-class="{'has-error': (submitted && homeForm.location.$invalid)}">
 					<input type="text" class="form-control" name="location" id="location" ng-model="location" placeholder="Location" required>
-					<span ng-show="submitted && myForm.location.$invalid">Must enter a location parameter.</span>
+					<div ng-show="submitted && homeForm.location.$invalid">	<span class="help-block">Must enter a location parameter.</span>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-4">
-				<button class="btn btn-primary" ng-click="directPage('result')">Find</button>
-				<button class="btn btn-primary">Feeling Lucky</button>
+				<div class="col-md-6">
+					<button type="submit" class="btn btn-primary">Find</button>
+					<button type="submit" class="btn btn-primary">Feeling Lucky</button>
+				</div>
 			</div>
+			<div class="col-md-1"></div>
 		</div>
 	</form>
 </div>

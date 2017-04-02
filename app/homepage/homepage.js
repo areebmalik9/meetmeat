@@ -13,9 +13,8 @@ angular.module('meetmeat.homepage', ['ngRoute','ui.bootstrap'])
 	$scope.search = "";
 	$scope.location = "";
 	$scope.submitted = false;
-	var valid = false;
 
-	$scope.directPage = function(path) {
+	$scope.directPage = function(path, valid) {
 		$scope.submitted = true;
 		if (valid) {
 			sessionStorage.setItem('search', $scope.search);

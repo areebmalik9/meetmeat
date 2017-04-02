@@ -1,14 +1,15 @@
 'use strict';
 
-angular.module('meetmeat.result', ['ngRoute'])
+angular.module('meetmeat')
+.controller('ResultCtrl', function($scope) {
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/result', {
-    templateUrl: 'result/result.html',
-    controller: 'ResultCtrl'
-  });
-}])
+	$scope.search = "";
+	$scope.location = "";
 
-.controller('ResultCtrl', [function() {
+	$scope.init = function(){
+		$scope.search = sessionStorage.search;
+		$scope.location = sessionStorage.location;
+	};
 
-}]);
+	$scope.init();
+});

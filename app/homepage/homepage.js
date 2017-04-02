@@ -1,15 +1,8 @@
 'use strict';
+
 var h = screen.height;
 var w = screen.width;
-angular.module('meetmeat.homepage', ['ngRoute','ui.bootstrap'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/homepage', {
-    templateUrl: 'homepage/homepage.html',
-    controller: 'HomePageCtrl'
-  });
-}])
-
+angular.module('meetmeat')
 .controller('HomePageCtrl', function($scope, $location) {
 	$scope.search = "";
 	$scope.location = "";

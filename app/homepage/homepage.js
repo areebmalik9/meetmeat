@@ -11,8 +11,12 @@ angular.module('meetmeat')
 	$scope.directPage = function(path, valid) {
 		$scope.submitted = true;
 		if (valid) {
+			$scope.location = {
+				latitude: 43.260846,
+				longitude: -79.919215
+			}
 			sessionStorage.setItem('search', $scope.search);
-			sessionStorage.setItem('location', $scope.location);
+			sessionStorage.setItem('location', JSON.stringify($scope.location));
 			$location.path(path);
 		}
 	};

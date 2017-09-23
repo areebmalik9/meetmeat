@@ -10,7 +10,7 @@
         "spec": "latest",
         "type": "tag"
       },
-      "C:\\Users\\AreebMalik\\Documents\\HackPrinceton\\meetmeat"
+      "C:\\Users\\AreebMalik\\Documents\\HackPrinceton\\meetme"
     ]
   ],
   "_from": "angular-bootstrap@latest",
@@ -41,7 +41,7 @@
   "_shasum": "de9900a7db087a7e9da47304a9c2f77f9c069827",
   "_shrinkwrap": null,
   "_spec": "angular-bootstrap",
-  "_where": "C:\\Users\\AreebMalik\\Documents\\HackPrinceton\\meetmeat",
+  "_where": "C:\\Users\\AreebMalik\\Documents\\HackPrinceton\\meetme",
   "author": {
     "name": "https://github.com/angular-ui/bootstrap/graphs/contributors"
   },

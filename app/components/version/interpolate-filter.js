@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meetmeat.version.interpolate-filter', [])
+angular.module('meetme.version.interpolate-filter', [])
 
 .filter('interpolate', ['version', function(version) {
   return function(text) {

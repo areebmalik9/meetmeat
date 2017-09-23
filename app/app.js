@@ -1,12 +1,16 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('meetmeat', [
+angular.module('meetme', [
   'ui.bootstrap',
   'ngRoute'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-	$routeProvider.when('/homepage', {
+	$routeProvider.when('/login', {
+		templateUrl: 'login/login.html',
+		controller: 'LogInCtrl'
+	})
+	.when('/homepage', {
 		templateUrl: 'homepage/homepage.html',
 		controller: 'HomePageCtrl'
 	})
@@ -14,5 +18,5 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 		templateUrl: 'result/result.html',
 		controller: 'ResultCtrl'
 	})
-	.otherwise({redirectTo: '/homepage'});
+	.otherwise({redirectTo: '/login'});
 }]);

@@ -1,4 +1,4 @@
-angular.module('meetmeat', ['ngRoute','ui.bootstrap'])
+angular.module('meetme', ['ngRoute','ui.bootstrap'])
 
 .factory('dataService', function() {
 	 var savedData = "";

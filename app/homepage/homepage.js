@@ -2,7 +2,7 @@
 
 var h = screen.height;
 var w = screen.width;
-angular.module('meetmeat')
+angular.module('meetme')
 .controller('HomePageCtrl', function($scope, $location) {
 	$scope.search = "";
 	$scope.location = "";

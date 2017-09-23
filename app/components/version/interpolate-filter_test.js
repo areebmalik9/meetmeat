@@ -1,7 +1,7 @@
 'use strict';
 
-describe('meetmeat.version module', function() {
-  beforeEach(module('meetmeat.version'));
+describe('meetme.version module', function() {
+  beforeEach(module('meetme.version'));
 
   describe('interpolate filter', function() {
     beforeEach(module(function($provide) {

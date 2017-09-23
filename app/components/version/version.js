@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('meetmeat.version', [
-  'meetmeat.version.interpolate-filter',
-  'meetmeat.version.version-directive'
+angular.module('meetme.version', [
+  'meetme.version.interpolate-filter',
+  'meetme.version.version-directive'
 ])
 
 .value('version', '0.1');

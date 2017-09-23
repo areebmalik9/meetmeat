@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meetmeat')
+angular.module('meetme')
 .controller('ResultCtrl', function($scope, $http) {
 
 	$scope.search = "";

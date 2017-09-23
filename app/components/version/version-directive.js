@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meetmeat.version.version-directive', [])
+angular.module('meetme.version.version-directive', [])
 
 .directive('appVersion', ['version', function(version) {
   return function(scope, elm, attrs) {
